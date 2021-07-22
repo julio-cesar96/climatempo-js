@@ -30,8 +30,6 @@ document.querySelector('.busca').addEventListener('submit', async (event) => {
 function showInfo(data) {
     showWarning('');
 
-    document.querySelector('.resultado').style.display = 'block';
-
     document.querySelector('.titulo').innerHTML = `${data.name}, ${data.country}`;
     document.querySelector('.tempInfo').innerHTML = `${data.temp} <sup>Cº</sup>`;
     document.querySelector('.ventoInfo').innerHTML = `${data.windSpeed} <span>km/h</span>`;
@@ -39,6 +37,8 @@ function showInfo(data) {
     document.querySelector('.temp img').setAttribute('src', `http://openweathermap.org/img/wn/${data.tempIcon}@2x.png`);
 
     document.querySelector('.ventoPonto').style.transform = `rotate(${data.windAngle - 90}deg)`;
+
+    document.querySelector('.resultado').style.display = 'block';
 }
 
 function showWarning(msg) {
